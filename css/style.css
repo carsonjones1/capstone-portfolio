@@ -362,7 +362,7 @@ a:focus-visible,
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--garnet-light);
+  color: var(--gold);
 }
 
 .journey-track {
@@ -383,7 +383,7 @@ a:focus-visible,
 
 .journey-end--finish {
   text-align: right;
-  color: rgba(154, 0, 18, 0.85);
+  color: rgba(184, 150, 62, 0.85);
 }
 
 .journey-rail {
@@ -412,8 +412,8 @@ a:focus-visible,
   top: calc(var(--rail-center) - 1px);
   height: 2px;
   width: 0;
-  background: linear-gradient(90deg, var(--garnet), var(--garnet-light));
-  box-shadow: 0 0 12px rgba(115, 0, 10, 0.55);
+  background: linear-gradient(90deg, var(--gold), #d4b45c);
+  box-shadow: 0 0 12px rgba(184, 150, 62, 0.55);
   transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 1;
 }
@@ -426,8 +426,8 @@ a:focus-visible,
   height: 16px;
   margin-left: -8px;
   border-radius: 50%;
-  background: var(--garnet-light);
-  box-shadow: 0 0 0 0 rgba(154, 0, 18, 0.45);
+  background: var(--gold);
+  box-shadow: 0 0 0 0 rgba(184, 150, 62, 0.45);
   transition: left 1.1s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 3;
   pointer-events: none;
@@ -435,9 +435,9 @@ a:focus-visible,
 }
 
 @keyframes journey-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(154, 0, 18, 0.5); }
-  70% { box-shadow: 0 0 0 14px rgba(154, 0, 18, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(154, 0, 18, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(184, 150, 62, 0.5); }
+  70% { box-shadow: 0 0 0 14px rgba(184, 150, 62, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(184, 150, 62, 0); }
 }
 
 .journey-node {
@@ -460,14 +460,14 @@ a:focus-visible,
 }
 
 .journey-node.is-complete .journey-dot {
-  background: var(--garnet);
-  border-color: var(--garnet);
+  background: var(--gold);
+  border-color: var(--gold);
 }
 
 .journey-node.is-current .journey-dot {
   background: transparent;
-  border-color: var(--garnet-light);
-  box-shadow: 0 0 0 4px rgba(154, 0, 18, 0.22);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(184, 150, 62, 0.22);
 }
 
 .journey-node.is-ahead .journey-dot {
@@ -495,8 +495,8 @@ a:focus-visible,
   color: rgba(255, 255, 255, 0.3);
 }
 
-.journey-node.is-complete .journey-status { color: rgba(154, 0, 18, 0.9); }
-.journey-node.is-current .journey-status { color: var(--garnet-light); }
+.journey-node.is-complete .journey-status { color: rgba(184, 150, 62, 0.9); }
+.journey-node.is-current .journey-status { color: var(--gold); }
 
 @media (prefers-reduced-motion: reduce) {
   .journey-rail-fill,
@@ -615,7 +615,7 @@ a:focus-visible,
 
 .connection-inner h2 em {
   font-style: italic;
-  color: var(--garnet);
+  color: var(--ink);
 }
 
 .connection-copy p {
@@ -669,6 +669,33 @@ a:focus-visible,
 }
 
 .btn:hover { background: var(--garnet-light); }
+
+.looking-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.btn-on-dark {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.btn-on-dark:hover {
+  background: #d4b45c;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+}
 
 .resume-highlights {
   display: grid;
@@ -896,7 +923,17 @@ a:focus-visible,
     min-height: auto;
   }
 
-  .hero-img-wrap { display: none; }
+  .hero-img-wrap {
+    justify-content: flex-start;
+    order: -1;
+  }
+
+  .hero-img-placeholder {
+    width: min(280px, 70vw);
+    height: auto;
+    aspect-ratio: 380 / 460;
+  }
+
   .hero-scroll { display: none; }
 
   .about-grid,
