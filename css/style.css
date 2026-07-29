@@ -20,6 +20,14 @@
 
   --max-w: 1140px;
   --section-pad: 96px;
+
+  --pattern-dot: rgba(28, 25, 22, 0.1);
+  --pattern-line: rgba(28, 25, 22, 0.055);
+  --pattern:
+    radial-gradient(circle, var(--pattern-dot) 1.15px, transparent 1.25px),
+    linear-gradient(var(--pattern-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--pattern-line) 1px, transparent 1px);
+  --pattern-size: 18px 18px, 54px 54px, 54px 54px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,7 +35,10 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: var(--pattern);
+  background-size: var(--pattern-size);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 16px;
@@ -129,7 +140,7 @@ a:focus-visible,
 
 .hero-name em {
   font-style: italic;
-  color: var(--garnet);
+  color: var(--ink);
 }
 
 .hero-sub {
@@ -200,7 +211,7 @@ a:focus-visible,
 
 .page-hero h1 em {
   font-style: italic;
-  color: var(--garnet);
+  color: var(--ink);
 }
 
 /* ============================================
@@ -212,7 +223,10 @@ a:focus-visible,
 }
 
 .section.alt-bg {
-  background: var(--bg-alt);
+  background-color: var(--bg-alt);
+  background-image: var(--pattern);
+  background-size: var(--pattern-size);
+  background-attachment: fixed;
 }
 
 .section-inner {
@@ -284,7 +298,14 @@ a:focus-visible,
 
 .info-item:last-child { border-bottom: none; }
 
+.info-item > span:not(.info-label) {
+  flex: 1;
+  min-width: 0;
+  text-align: right;
+}
+
 .info-label {
+  flex-shrink: 0;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -556,7 +577,12 @@ a:focus-visible,
   font-size: 1rem;
 }
 
-.exp-btc { background: var(--bg-alt); }
+.exp-btc {
+  background-color: var(--bg-alt);
+  background-image: var(--pattern);
+  background-size: var(--pattern-size);
+  background-attachment: fixed;
+}
 
 /* CONNECTION */
 .connection-inner {
